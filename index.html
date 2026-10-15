@@ -284,6 +284,84 @@
       margin-bottom: 15px;
     }
 
+    .find-match {
+  background-color: #efe1cf;
+  padding: 80px 25px;
+}
+
+.match-inner {
+  max-width: 1050px;
+  margin: auto;
+}
+
+.match-heading {
+  max-width: 700px;
+  margin-bottom: 35px;
+}
+
+.match-heading h2 {
+  font-size: 2.5rem;
+  line-height: 1.1;
+  margin: 8px 0 12px;
+}
+
+.match-heading p {
+  color: #665246;
+}
+
+.match-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.match-card {
+  background-color: #fffaf4;
+  border: 1px solid #d9c5af;
+  border-radius: 16px;
+  padding: 25px;
+  text-decoration: none;
+  color: #332820;
+  transition: transform 0.2s ease;
+}
+
+.match-card:hover {
+  transform: translateY(-3px);
+}
+
+.match-label {
+  display: block;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: #92735a;
+  font-size: 0.68rem;
+  font-weight: bold;
+  margin-bottom: 7px;
+}
+
+.match-card h3 {
+  margin: 0 0 6px;
+  font-size: 1.25rem;
+}
+
+.match-card p {
+  margin: 0;
+  color: #6f5848;
+  font-size: 0.9rem;
+}
+
+@media (max-width: 800px) {
+  .match-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 500px) {
+  .match-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
     footer {
       background-color: #332820;
       color: #ffffff;
@@ -515,6 +593,61 @@
       <a class="button" href="best-coffee-shops.html">Explore the Guide →</a>
     </section>
 
+  <section class="find-match">
+  <div class="match-inner">
+
+    <div class="match-heading">
+      <span class="eyebrow">Skip the coffee-shop spiral</span>
+      <h2>Find your match.</h2>
+      <p>
+        You know what kind of coffee day you're having. Start there.
+        These fictional Daily Pour picks make it easier to find the right
+        Iowa City coffee stop without opening twelve tabs first.
+      </p>
+    </div>
+
+    <div class="match-grid">
+
+      <a class="match-card" href="best-coffee-shops.html">
+        <span class="match-label">I want the best overall</span>
+        <h3>Juniper & Oak</h3>
+        <p>Slow mornings, solo work, and a Brown Sugar Oat Latte.</p>
+      </a>
+
+      <a class="match-card" href="best-coffee-shops.html">
+        <span class="match-label">I need to seriously study</span>
+        <h3>Prairie Moon Coffee Co.</h3>
+        <p>Our fictional pick for settling in and staying awhile.</p>
+      </a>
+
+      <a class="match-card" href="downtown-coffee-shops.html">
+        <span class="match-label">I'm between classes</span>
+        <h3>Market Street Mug</h3>
+        <p>A fictional downtown quick stop when the clock is winning.</p>
+      </a>
+
+      <a class="match-card" href="downtown-coffee-shops.html">
+        <span class="match-label">I'm meeting someone</span>
+        <h3>The Brick Cup</h3>
+        <p>Social, lively, and imagined for a downtown coffee catch-up.</p>
+      </a>
+
+      <a class="match-card" href="open-late-coffee-shops.html">
+        <span class="match-label">It's getting late</span>
+        <h3>Night Owl Coffee Room</h3>
+        <p>The fictional midnight pick for deadlines and long study nights.</p>
+      </a>
+
+      <a class="match-card" href="open-late-coffee-shops.html">
+        <span class="match-label">We have a group project</span>
+        <h3>Second Shift Café</h3>
+        <p>Shared tables, evening energy, and room for the whole fictional crew.</p>
+      </a>
+
+    </div>
+  </div>
+</section>
+  
   </main>
 
   <footer>
