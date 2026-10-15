@@ -3,9 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coffee Shops Downtown Iowa City | The Daily Pour</title>
+
+  <title>Downtown Iowa City Coffee Shops | The Daily Pour</title>
+  <meta name="description" content="Explore fictional downtown Iowa City coffee shops for studying, meeting friends, quick coffee runs, and relaxing between campus and downtown plans.">
+
   <style>
     * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
 
     body {
       margin: 0;
@@ -20,19 +25,24 @@
       color: white;
       padding: 10px 20px;
       text-align: center;
-      font-size: 0.85rem;
+      font-size: 0.82rem;
     }
 
     header {
       background-color: #efe1cf;
-      padding: 25px 20px;
+      padding: 24px 20px;
       text-align: center;
       border-bottom: 1px solid #d6c1aa;
     }
 
-    header h1 { margin: 0; }
+    .brand {
+      margin: 0;
+      font-size: 2.1rem;
+      letter-spacing: -1px;
+    }
 
     .tagline {
+      margin: 3px 0 18px;
       color: #765a45;
       font-style: italic;
     }
@@ -41,8 +51,7 @@
       display: flex;
       justify-content: center;
       flex-wrap: wrap;
-      gap: 12px;
-      margin-top: 15px;
+      gap: 10px;
     }
 
     nav a {
@@ -55,57 +64,285 @@
 
     nav a:hover { background-color: #d9c2a8; }
 
-    main {
-      max-width: 900px;
+    .hero {
+      max-width: 1100px;
       margin: auto;
-      padding: 45px 20px 60px;
+      padding: 85px 25px 70px;
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 65px;
+      align-items: end;
     }
 
-    .intro {
-      text-align: center;
+    .eyebrow {
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      font-size: 0.78rem;
+      font-weight: bold;
+      color: #765a45;
+    }
+
+    .hero h2 {
+      font-size: 4rem;
+      line-height: 1.02;
+      letter-spacing: -2px;
+      margin: 15px 0 0;
+    }
+
+    .hero-side {
+      border-left: 1px solid #cdb9a3;
+      padding-left: 30px;
+      color: #604d3f;
+    }
+
+    .downtown-strip {
+      background-color: #332820;
+      color: white;
+    }
+
+    .strip-inner {
+      max-width: 1100px;
+      margin: auto;
+      padding: 28px 25px;
+      display: flex;
+      justify-content: space-between;
+      gap: 25px;
+      flex-wrap: wrap;
+    }
+
+    .strip-item span {
+      display: block;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: #d9c4ae;
+      font-size: 0.7rem;
+      margin-bottom: 3px;
+    }
+
+    .strip-item strong { font-size: 0.95rem; }
+
+    .guide {
+      max-width: 1050px;
+      margin: auto;
+      padding: 75px 25px;
+    }
+
+    .guide-heading {
+      max-width: 700px;
       margin-bottom: 40px;
     }
 
-    .intro h2 {
-      font-size: 2.2rem;
-      margin-bottom: 10px;
+    .guide-heading h2 {
+      font-size: 2.5rem;
+      margin: 8px 0;
     }
 
     .shop {
-      background-color: white;
-      border: 1px solid #e2d5c7;
-      border-radius: 12px;
-      padding: 25px;
-      margin-bottom: 22px;
+      display: grid;
+      grid-template-columns: 0.65fr 1.35fr;
+      border-top: 1px solid #ccb9a4;
+      padding: 42px 0;
+      gap: 45px;
+    }
+
+    .shop-number {
+      font-size: 3rem;
+      font-weight: bold;
+      color: #d4bea5;
+      line-height: 1;
+    }
+
+    .shop-label {
+      display: block;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: #80634d;
+      font-size: 0.72rem;
+      font-weight: bold;
+      margin-top: 15px;
     }
 
     .shop h3 {
-      margin-top: 0;
-      font-size: 1.5rem;
+      font-size: 2rem;
+      margin: 0 0 3px;
+    }
+
+    .shop-tagline {
+      margin: 0 0 18px;
+      color: #765a45;
+      font-style: italic;
+      font-size: 1.05rem;
     }
 
     .details {
-      background-color: #e9dccb;
-      padding: 12px 15px;
-      border-radius: 8px;
-      margin-top: 15px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 15px;
+      margin-top: 25px;
+    }
+
+    .detail {
+      background-color: #ede0d0;
+      padding: 16px;
+      border-radius: 10px;
+    }
+
+    .detail span {
+      display: block;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: #80634d;
+      font-size: 0.65rem;
+      font-weight: bold;
+      margin-bottom: 4px;
+    }
+
+    .detail strong { font-size: 0.9rem; }
+
+    .route-section {
+      background-color: #e9dac7;
+    }
+
+    .route-inner {
+      max-width: 1050px;
+      margin: auto;
+      padding: 75px 25px;
+    }
+
+    .route-inner h2 {
+      font-size: 2.6rem;
+      margin: 8px 0 30px;
+    }
+
+    .route-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .route-card {
+      background-color: #f8f3ec;
+      padding: 28px;
+      border-radius: 15px;
+    }
+
+    .route-card h3 {
+      margin-top: 0;
+      font-size: 1.3rem;
+    }
+
+    .route-card p {
+      color: #655144;
+      margin-bottom: 0;
+    }
+
+    .local-section {
+      background-color: #332820;
+      color: white;
+    }
+
+    .local-inner {
+      max-width: 950px;
+      margin: auto;
+      padding: 70px 25px;
+      text-align: center;
+    }
+
+    .local-inner .eyebrow { color: #d9c4ae; }
+
+    .local-inner h2 {
+      font-size: 2.7rem;
+      margin: 10px 0 18px;
+    }
+
+    .local-inner p {
+      color: #e8ddd2;
+      max-width: 750px;
+      margin: auto;
+    }
+
+    .more-guides {
+      text-align: center;
+      padding: 75px 25px;
+    }
+
+    .more-guides h2 {
+      font-size: 2.3rem;
+      margin: 8px 0;
+    }
+
+    .guide-links {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 25px;
+    }
+
+    .button {
+      display: inline-block;
+      background-color: #332820;
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      padding: 12px 20px;
+      border-radius: 30px;
+    }
+
+    .button.secondary {
+      background-color: #dfcbb3;
+      color: #332820;
     }
 
     footer {
       background-color: #332820;
       color: white;
-      padding: 30px 20px;
       text-align: center;
-      font-size: 0.9rem;
+      padding: 35px 20px;
+      font-size: 0.88rem;
     }
 
     footer a { color: #f3dfc7; }
 
-    @media (max-width: 700px) {
-      .intro h2 { font-size: 1.8rem; }
+    @media (max-width: 800px) {
+      .hero {
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+
+      .hero h2 { font-size: 3rem; }
+
+      .hero-side {
+        border-left: none;
+        border-top: 1px solid #cdb9a3;
+        padding: 25px 0 0;
+      }
+
+      .shop {
+        grid-template-columns: 1fr;
+        gap: 15px;
+      }
+
+      .details,
+      .route-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 500px) {
+      .hero { padding-top: 55px; }
+
+      .hero h2 { font-size: 2.5rem; }
+
+      .strip-inner { flex-direction: column; }
+
+      nav { gap: 4px; }
+
+      nav a { font-size: 0.9rem; }
     }
   </style>
 </head>
+
 <body>
 
   <div class="notice">
@@ -113,7 +350,7 @@
   </div>
 
   <header>
-    <h1>The Daily Pour</h1>
+    <h1 class="brand">The Daily Pour</h1>
     <p class="tagline">Your cup-by-cup guide to Iowa City.</p>
 
     <nav>
@@ -125,68 +362,302 @@
   </header>
 
   <main>
-    <section class="intro">
-      <h2>Coffee Shops in Downtown Iowa City</h2>
-      <p>
-        Whether you're between classes, meeting a friend, or spending an afternoon
-        downtown, these fictional coffee shops are designed around different ways to
-        enjoy the center of Iowa City.
-      </p>
+
+    <section class="hero">
+      <div>
+        <span class="eyebrow">Coffee, meet downtown</span>
+        <h2>Your downtown coffee run starts here.</h2>
+      </div>
+
+      <div class="hero-side">
+        <p>
+          Looking for coffee shops in downtown Iowa City? These fictional
+          picks are designed around the way downtown actually fits into the
+          day: before class, between plans, over a laptop, or across the
+          table from someone you haven't caught up with in way too long.
+        </p>
+      </div>
     </section>
 
-    <article class="shop">
-      <h3>Market Street Mug</h3>
-      <p>
-        Built for people in motion, Market Street Mug serves fictional espresso drinks,
-        cold brew, and breakfast bites from a bright corner café. The front counter is
-        quick, while window seats give you a place to stay when your schedule allows.
-      </p>
-      <div class="details">
-        <strong>Try it for:</strong> A quick downtown coffee before class or work.
+    <section class="downtown-strip">
+      <div class="strip-inner">
+        <div class="strip-item">
+          <span>Need it fast?</span>
+          <strong>Market Street Mug</strong>
+        </div>
+        <div class="strip-item">
+          <span>Bringing the laptop?</span>
+          <strong>Paper & Steam</strong>
+        </div>
+        <div class="strip-item">
+          <span>Meeting someone?</span>
+          <strong>The Brick Cup</strong>
+        </div>
+        <div class="strip-item">
+          <span>Staying awhile?</span>
+          <strong>Cornerlight Café</strong>
+        </div>
       </div>
-    </article>
+    </section>
 
-    <article class="shop">
-      <h3>Paper & Steam</h3>
-      <p>
-        Part fictional café and part reading room, Paper & Steam keeps things quieter.
-        Bookshelves line the walls, tables are spaced for laptops and notebooks, and
-        the menu includes espresso, tea, pastries, and rotating seasonal drinks.
-      </p>
-      <div class="details">
-        <strong>Try it for:</strong> Reading, writing, or an afternoon study session.
-      </div>
-    </article>
+    <section class="guide">
 
-    <article class="shop">
-      <h3>The Brick Cup</h3>
-      <p>
-        The Brick Cup leans into downtown energy with communal tables, upbeat music,
-        and a fictional menu of flavored lattes and iced drinks. It's made for meeting
-        someone rather than hiding behind a laptop.
-      </p>
-      <div class="details">
-        <strong>Try it for:</strong> Catching up with friends over coffee.
+      <div class="guide-heading">
+        <span class="eyebrow">The downtown shortlist</span>
+        <h2>Four fictional stops. One very walkable coffee day.</h2>
+        <p>
+          Each spot fills a different role, whether you're moving between
+          campus and downtown or looking for somewhere to settle in.
+        </p>
       </div>
-    </article>
 
-    <article class="shop">
-      <h3>Cornerlight Café</h3>
-      <p>
-        Cornerlight's fictional floor-to-ceiling windows make it especially inviting
-        on sunny afternoons. Its simple menu includes coffee, matcha, chai, and fresh
-        baked goods, with small tables suited to solo visitors and casual meetings.
-      </p>
-      <div class="details">
-        <strong>Try it for:</strong> A relaxed downtown break with plenty of natural light.
+      <article class="shop">
+        <div>
+          <div class="shop-number">01</div>
+          <span class="shop-label">The quick-stop pick</span>
+        </div>
+
+        <div>
+          <h3>Market Street Mug</h3>
+          <p class="shop-tagline">In, caffeinated, and back out the door.</p>
+          <p>
+            Market Street Mug is imagined as a compact downtown counter for
+            mornings when your schedule has absolutely no interest in slowing
+            down. The fictional menu keeps things simple, service moves quickly,
+            and the location is designed to fit naturally into a walk between
+            campus and downtown Iowa City.
+          </p>
+
+          <div class="details">
+            <div class="detail">
+              <span>Best for</span>
+              <strong>Before-class coffee</strong>
+            </div>
+            <div class="detail">
+              <span>Order</span>
+              <strong>Caramel Sea Salt Cold Brew</strong>
+            </div>
+            <div class="detail">
+              <span>Fictional area</span>
+              <strong>Campus edge</strong>
+            </div>
+            <div class="detail">
+              <span>Stay awhile?</span>
+              <strong>Better for quick visits</strong>
+            </div>
+            <div class="detail">
+              <span>Noise</span>
+              <strong>Busy & upbeat</strong>
+            </div>
+            <div class="detail">
+              <span>Fictional hours</span>
+              <strong>6 AM – 7 PM</strong>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="shop">
+        <div>
+          <div class="shop-number">02</div>
+          <span class="shop-label">The study pick</span>
+        </div>
+
+        <div>
+          <h3>Paper & Steam</h3>
+          <p class="shop-tagline">A downtown table with your name on it.</p>
+          <p>
+            Paper & Steam is imagined for people who came downtown but still
+            need to get something done. Long shared tables, fictional outlets,
+            soft lighting, and a quieter back section make it the kind of place
+            where opening your laptop doesn't feel like overstaying your welcome.
+          </p>
+
+          <div class="details">
+            <div class="detail">
+              <span>Best for</span>
+              <strong>Solo studying</strong>
+            </div>
+            <div class="detail">
+              <span>Order</span>
+              <strong>Toasted Vanilla Latte</strong>
+            </div>
+            <div class="detail">
+              <span>Fictional area</span>
+              <strong>Near the downtown core</strong>
+            </div>
+            <div class="detail">
+              <span>Study factor</span>
+              <strong>Excellent</strong>
+            </div>
+            <div class="detail">
+              <span>Noise</span>
+              <strong>Low to moderate</strong>
+            </div>
+            <div class="detail">
+              <span>Fictional hours</span>
+              <strong>7 AM – 9 PM</strong>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="shop">
+        <div>
+          <div class="shop-number">03</div>
+          <span class="shop-label">The meet-up pick</span>
+        </div>
+
+        <div>
+          <h3>The Brick Cup</h3>
+          <p class="shop-tagline">For “want to grab coffee?” plans that actually happen.</p>
+          <p>
+            The Brick Cup is imagined as a lively social stop within the
+            fictional downtown guide. Think exposed brick, small tables,
+            conversational energy, and the kind of atmosphere that works
+            equally well for a casual meeting or a long-overdue catch-up.
+          </p>
+
+          <div class="details">
+            <div class="detail">
+              <span>Best for</span>
+              <strong>Friends & casual meetings</strong>
+            </div>
+            <div class="detail">
+              <span>Order</span>
+              <strong>Mocha Maple Latte</strong>
+            </div>
+            <div class="detail">
+              <span>Fictional area</span>
+              <strong>Near the Ped Mall</strong>
+            </div>
+            <div class="detail">
+              <span>Study factor</span>
+              <strong>Fair</strong>
+            </div>
+            <div class="detail">
+              <span>Noise</span>
+              <strong>Social & lively</strong>
+            </div>
+            <div class="detail">
+              <span>Fictional hours</span>
+              <strong>7 AM – 8 PM</strong>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="shop">
+        <div>
+          <div class="shop-number">04</div>
+          <span class="shop-label">The slow-afternoon pick</span>
+        </div>
+
+        <div>
+          <h3>Cornerlight Café</h3>
+          <p class="shop-tagline">When you have nowhere to be for a minute.</p>
+          <p>
+            Cornerlight Café is imagined as a softer, slower downtown option:
+            comfortable seating, warm lighting, window tables, and enough calm
+            to make an afternoon disappear. It's the fictional pick for reading,
+            journaling, or simply taking a break before the next thing.
+          </p>
+
+          <div class="details">
+            <div class="detail">
+              <span>Best for</span>
+              <strong>Reading & slow afternoons</strong>
+            </div>
+            <div class="detail">
+              <span>Order</span>
+              <strong>Lavender Honey Latte</strong>
+            </div>
+            <div class="detail">
+              <span>Fictional area</span>
+              <strong>A few blocks from campus</strong>
+            </div>
+            <div class="detail">
+              <span>Study factor</span>
+              <strong>Very good</strong>
+            </div>
+            <div class="detail">
+              <span>Noise</span>
+              <strong>Calm</strong>
+            </div>
+            <div class="detail">
+              <span>Fictional hours</span>
+              <strong>7:30 AM – 8 PM</strong>
+            </div>
+          </div>
+        </div>
+      </article>
+
+    </section>
+
+    <section class="route-section">
+      <div class="route-inner">
+        <span class="eyebrow">Pick by the plan</span>
+        <h2>Downtown coffee, depending on the day.</h2>
+
+        <div class="route-grid">
+          <article class="route-card">
+            <h3>Between classes</h3>
+            <p>
+              Start with Market Street Mug when the goal is getting coffee
+              without turning it into an event.
+            </p>
+          </article>
+
+          <article class="route-card">
+            <h3>Study afternoon</h3>
+            <p>
+              Head toward Paper & Steam when the laptop is coming with you
+              and you're planning to stay awhile.
+            </p>
+          </article>
+
+          <article class="route-card">
+            <h3>Downtown plans</h3>
+            <p>
+              Try The Brick Cup or Cornerlight Café when coffee is part of
+              the afternoon rather than the entire mission.
+            </p>
+          </article>
+        </div>
       </div>
-    </article>
+    </section>
+
+    <section class="local-section">
+      <div class="local-inner">
+        <span class="eyebrow">Why downtown?</span>
+        <h2>Because the best coffee stop fits into the rest of your day.</h2>
+        <p>
+          Downtown Iowa City and the University of Iowa campus sit close enough
+          together that coffee can be the meeting point between class, studying,
+          errands, and evening plans. The fictional shops in this guide are
+          designed around that walkable college-town rhythm.
+        </p>
+      </div>
+    </section>
+
+    <section class="more-guides">
+      <span class="eyebrow">Not done looking?</span>
+      <h2>There's more coffee where that came from.</h2>
+      <p>Choose your next guide based on what you need.</p>
+
+      <div class="guide-links">
+        <a class="button" href="best-coffee-shops.html">See the Best Coffee Shops →</a>
+        <a class="button secondary" href="open-late-coffee-shops.html">Find Coffee Open Late →</a>
+      </div>
+    </section>
+
   </main>
 
   <footer>
     <p>
       This is a fictional website created for educational purposes as part of MKTG:4400 at the University of Iowa. It is not a real business.
     </p>
+
     <p>
       <a href="index.html">Home</a> |
       <a href="best-coffee-shops.html">Best Coffee Shops</a> |
