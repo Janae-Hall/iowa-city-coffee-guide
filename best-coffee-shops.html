@@ -3,9 +3,18 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Best Coffee Shops Iowa City | The Daily Pour</title>
+
+  <title>Best Coffee Shops in Iowa City | The Daily Pour</title>
+  <meta name="description" content="Explore fictional picks for the best coffee shops in Iowa City, with recommendations for studying, slow mornings, specialty drinks, and catching up with friends.">
+
   <style>
-    * { box-sizing: border-box; }
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
 
     body {
       margin: 0;
@@ -17,22 +26,27 @@
 
     .notice {
       background-color: #332820;
-      color: white;
+      color: #ffffff;
       padding: 10px 20px;
       text-align: center;
-      font-size: 0.85rem;
+      font-size: 0.82rem;
     }
 
     header {
       background-color: #efe1cf;
-      padding: 25px 20px;
+      padding: 24px 20px;
       text-align: center;
       border-bottom: 1px solid #d6c1aa;
     }
 
-    header h1 { margin: 0; }
+    .brand {
+      margin: 0;
+      font-size: 2.1rem;
+      letter-spacing: -1px;
+    }
 
     .tagline {
+      margin: 3px 0 18px;
       color: #765a45;
       font-style: italic;
     }
@@ -41,8 +55,7 @@
       display: flex;
       justify-content: center;
       flex-wrap: wrap;
-      gap: 12px;
-      margin-top: 15px;
+      gap: 10px;
     }
 
     nav a {
@@ -53,57 +66,309 @@
       border-radius: 20px;
     }
 
-    nav a:hover { background-color: #d9c2a8; }
-
-    main {
-      max-width: 900px;
-      margin: auto;
-      padding: 45px 20px 60px;
+    nav a:hover {
+      background-color: #d9c2a8;
     }
 
-    .intro {
+    .hero {
       text-align: center;
-      margin-bottom: 40px;
+      padding: 80px 25px 70px;
+      background-color: #f7f1e8;
     }
 
-    .intro h2 {
-      font-size: 2.2rem;
-      margin-bottom: 10px;
+    .hero-content {
+      max-width: 800px;
+      margin: auto;
     }
 
-    .shop {
-      background-color: white;
-      border: 1px solid #e2d5c7;
-      border-radius: 12px;
-      padding: 25px;
-      margin-bottom: 22px;
-    }
-
-    .shop h3 {
-      margin: 0 0 5px;
-      font-size: 1.5rem;
-    }
-
-    .label {
+    .eyebrow {
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      font-size: 0.78rem;
       font-weight: bold;
       color: #765a45;
     }
 
-    footer {
-      background-color: #332820;
-      color: white;
-      padding: 30px 20px;
-      text-align: center;
-      font-size: 0.9rem;
+    .hero h2 {
+      font-size: 3.7rem;
+      line-height: 1.05;
+      letter-spacing: -2px;
+      margin: 16px 0 22px;
     }
 
-    footer a { color: #f3dfc7; }
+    .hero p {
+      max-width: 680px;
+      margin: auto;
+      font-size: 1.1rem;
+      color: #604d3f;
+    }
 
-    @media (max-width: 700px) {
-      .intro h2 { font-size: 1.8rem; }
+    .quick-picks {
+      max-width: 1000px;
+      margin: 0 auto 20px;
+      padding: 0 25px 60px;
+    }
+
+    .quick-picks-inner {
+      background-color: #332820;
+      color: #ffffff;
+      border-radius: 18px;
+      padding: 32px;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+
+    .quick-pick {
+      border-right: 1px solid #6d594a;
+      padding-right: 18px;
+    }
+
+    .quick-pick:last-child {
+      border-right: none;
+    }
+
+    .quick-pick span {
+      display: block;
+      color: #d9c4ae;
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      margin-bottom: 5px;
+    }
+
+    .quick-pick strong {
+      font-size: 0.95rem;
+    }
+
+    .guide {
+      max-width: 1050px;
+      margin: auto;
+      padding: 20px 25px 80px;
+    }
+
+    .guide-heading {
+      margin-bottom: 35px;
+    }
+
+    .guide-heading h2 {
+      font-size: 2.4rem;
+      margin: 8px 0;
+    }
+
+    .shop-card {
+      background-color: #ffffff;
+      border: 1px solid #e0d1c1;
+      border-radius: 18px;
+      margin-bottom: 28px;
+      overflow: hidden;
+    }
+
+    .shop-top {
+      padding: 35px 38px 28px;
+    }
+
+    .shop-number {
+      color: #92735a;
+      font-size: 0.75rem;
+      font-weight: bold;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    .shop-card h3 {
+      font-size: 2rem;
+      margin: 7px 0 2px;
+    }
+
+    .shop-line {
+      margin: 0 0 18px;
+      color: #765a45;
+      font-style: italic;
+      font-size: 1.05rem;
+    }
+
+    .shop-description {
+      max-width: 780px;
+      margin-bottom: 0;
+    }
+
+    .details {
+      background-color: #f0e5d7;
+      padding: 25px 38px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+    }
+
+    .detail-label {
+      display: block;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: #80634d;
+      font-size: 0.7rem;
+      font-weight: bold;
+      margin-bottom: 4px;
+    }
+
+    .detail-value {
+      font-weight: bold;
+    }
+
+    .ratings {
+      padding: 25px 38px 30px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+    }
+
+    .rating-title {
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+
+    .rating-note {
+      color: #6d594b;
+      font-size: 0.92rem;
+      margin: 0;
+    }
+
+    .student-section {
+      background-color: #e9dac7;
+    }
+
+    .student-inner {
+      max-width: 1000px;
+      margin: auto;
+      padding: 70px 25px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 55px;
+      align-items: center;
+    }
+
+    .student-inner h2 {
+      font-size: 2.6rem;
+      line-height: 1.1;
+      margin: 10px 0 18px;
+    }
+
+    .student-checklist {
+      background-color: #f8f3ec;
+      padding: 28px;
+      border-radius: 16px;
+    }
+
+    .student-checklist p {
+      padding-bottom: 12px;
+      border-bottom: 1px solid #dfd0bf;
+    }
+
+    .student-checklist p:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    .more-guides {
+      text-align: center;
+      padding: 75px 25px;
+    }
+
+    .more-guides h2 {
+      font-size: 2.3rem;
+      margin-bottom: 10px;
+    }
+
+    .guide-links {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 25px;
+    }
+
+    .button {
+      display: inline-block;
+      background-color: #332820;
+      color: #ffffff;
+      text-decoration: none;
+      font-weight: bold;
+      padding: 12px 20px;
+      border-radius: 30px;
+    }
+
+    .button.secondary {
+      background-color: #dfcbb3;
+      color: #332820;
+    }
+
+    footer {
+      background-color: #332820;
+      color: #ffffff;
+      text-align: center;
+      padding: 35px 20px;
+      font-size: 0.88rem;
+    }
+
+    footer a {
+      color: #f3dfc7;
+    }
+
+    @media (max-width: 800px) {
+      .hero h2 {
+        font-size: 2.8rem;
+      }
+
+      .quick-picks-inner {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .quick-pick {
+        border-right: none;
+      }
+
+      .details {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .student-inner {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 550px) {
+      .hero {
+        padding-top: 55px;
+      }
+
+      .hero h2 {
+        font-size: 2.35rem;
+      }
+
+      .quick-picks-inner,
+      .details,
+      .ratings {
+        grid-template-columns: 1fr;
+      }
+
+      .shop-top,
+      .details,
+      .ratings {
+        padding-left: 25px;
+        padding-right: 25px;
+      }
+
+      nav {
+        gap: 4px;
+      }
+
+      nav a {
+        font-size: 0.9rem;
+      }
     }
   </style>
 </head>
+
 <body>
 
   <div class="notice">
@@ -111,7 +376,7 @@
   </div>
 
   <header>
-    <h1>The Daily Pour</h1>
+    <h1 class="brand">The Daily Pour</h1>
     <p class="tagline">Your cup-by-cup guide to Iowa City.</p>
 
     <nav>
@@ -123,64 +388,332 @@
   </header>
 
   <main>
-    <section class="intro">
-      <h2>Best Coffee Shops in Iowa City</h2>
-      <p>
-        The best coffee shop depends on what you need from it. Our fictional picks
-        balance memorable drinks, comfortable spaces, friendly service, and the kind
-        of atmosphere that makes you want to stay for another cup.
-      </p>
+
+    <section class="hero">
+      <div class="hero-content">
+        <span class="eyebrow">The Daily Pour Picks</span>
+        <h2>The best coffee shops for whatever today looks like.</h2>
+        <p>
+          Looking for the best coffee shops in Iowa City? Start with what
+          matters to you: a really good cup, a table worth settling into,
+          somewhere to meet a friend, or enough outlets to survive the
+          assignment you definitely should have started yesterday.
+        </p>
+      </div>
     </section>
 
-    <article class="shop">
-      <h3>Juniper & Oak Coffee House</h3>
-      <p class="label">Best for: settling in for a slow morning</p>
-      <p>
-        Juniper & Oak pairs warm wood, oversized windows, and plenty of comfortable
-        seating with a menu built around approachable classics. Its fictional brown
-        sugar oat latte is the house favorite, while drip coffee comes with free
-        refills for guests staying awhile.
-      </p>
-    </article>
+    <section class="quick-picks">
+      <div class="quick-picks-inner">
 
-    <article class="shop">
-      <h3>Prairie Moon Coffee Co.</h3>
-      <p class="label">Best for: studying with friends</p>
-      <p>
-        Big tables, plentiful outlets, and a low-key soundtrack make Prairie Moon an
-        easy fictional pick for group projects and long afternoons. Try the honey
-        cinnamon cold brew when you need something sweet without turning your coffee
-        into dessert.
-      </p>
-    </article>
+        <div class="quick-pick">
+          <span>Best overall</span>
+          <strong>Juniper & Oak</strong>
+        </div>
 
-    <article class="shop">
-      <h3>Little Window Espresso</h3>
-      <p class="label">Best for: the coffee itself</p>
-      <p>
-        Little Window keeps its fictional menu intentionally short. Espresso,
-        cappuccinos, pour-overs, and rotating seasonal drinks get most of the attention.
-        The small room encourages quick visits, but serious coffee fans will appreciate
-        the careful preparation.
-      </p>
-    </article>
+        <div class="quick-pick">
+          <span>Best for studying</span>
+          <strong>Prairie Moon Coffee Co.</strong>
+        </div>
 
-    <article class="shop">
-      <h3>Sunday Table Café</h3>
-      <p class="label">Best for: coffee and something to eat</p>
-      <p>
-        Sunday Table is the fictional place for the friend who says they only want
-        coffee and then orders lunch. Breakfast sandwiches, baked oatmeal, pastries,
-        and espresso drinks make it an easy all-purpose stop from morning through
-        mid-afternoon.
-      </p>
-    </article>
+        <div class="quick-pick">
+          <span>Best quick stop</span>
+          <strong>Little Window Espresso</strong>
+        </div>
+
+        <div class="quick-pick">
+          <span>Best with friends</span>
+          <strong>Sunday Table Café</strong>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="guide">
+
+      <div class="guide-heading">
+        <span class="eyebrow">Four fictional favorites</span>
+        <h2>The Iowa City coffee shortlist.</h2>
+        <p>
+          Different days call for different cafés. Here's where we'd
+          fictionally send you first.
+        </p>
+      </div>
+
+      <article class="shop-card">
+        <div class="shop-top">
+          <span class="shop-number">01 · Best Overall</span>
+          <h3>Juniper & Oak Coffee House</h3>
+          <p class="shop-line">The place for mornings that don't need to be rushed.</p>
+          <p class="shop-description">
+            Juniper & Oak is imagined as a warm, relaxed Iowa City café with
+            oversized windows, natural wood, soft background music, and enough
+            room to stay awhile. It's the fictional spot we'd pick when you want
+            your coffee run to become part of the day instead of another thing
+            to check off the list.
+          </p>
+        </div>
+
+        <div class="details">
+          <div>
+            <span class="detail-label">Best for</span>
+            <span class="detail-value">Slow mornings & solo work</span>
+          </div>
+          <div>
+            <span class="detail-label">What to order</span>
+            <span class="detail-value">Brown Sugar Oat Latte</span>
+          </div>
+          <div>
+            <span class="detail-label">Fictional location</span>
+            <span class="detail-value">Near downtown & campus</span>
+          </div>
+          <div>
+            <span class="detail-label">Study factor</span>
+            <span class="detail-value">Very good</span>
+          </div>
+          <div>
+            <span class="detail-label">Noise level</span>
+            <span class="detail-value">Low to moderate</span>
+          </div>
+          <div>
+            <span class="detail-label">Fictional hours</span>
+            <span class="detail-value">7 AM – 8 PM</span>
+          </div>
+        </div>
+
+        <div class="ratings">
+          <div>
+            <div class="rating-title">Why we'd go</div>
+            <p class="rating-note">
+              Comfortable enough for a laptop, polished enough for a coffee
+              date, and calm enough to hear yourself think.
+            </p>
+          </div>
+          <div>
+            <div class="rating-title">The vibe</div>
+            <p class="rating-note">
+              Warm, settled, slightly elevated — the kind of place that makes
+              an ordinary Tuesday morning feel better.
+            </p>
+          </div>
+        </div>
+      </article>
+
+      <article class="shop-card">
+        <div class="shop-top">
+          <span class="shop-number">02 · Best for Studying</span>
+          <h3>Prairie Moon Coffee Co.</h3>
+          <p class="shop-line">Laptop open. Phone down. Let's get something done.</p>
+          <p class="shop-description">
+            Prairie Moon is built for the study-session crowd: large tables,
+            fictional outlets within easy reach, steady background noise, and
+            plenty of room for notebooks, laptops, and the coffee that's keeping
+            the whole operation moving.
+          </p>
+        </div>
+
+        <div class="details">
+          <div>
+            <span class="detail-label">Best for</span>
+            <span class="detail-value">Long study sessions</span>
+          </div>
+          <div>
+            <span class="detail-label">What to order</span>
+            <span class="detail-value">Honey Cinnamon Cold Brew</span>
+          </div>
+          <div>
+            <span class="detail-label">Fictional location</span>
+            <span class="detail-value">Between campus & downtown</span>
+          </div>
+          <div>
+            <span class="detail-label">Study factor</span>
+            <span class="detail-value">Excellent</span>
+          </div>
+          <div>
+            <span class="detail-label">Noise level</span>
+            <span class="detail-value">Moderate</span>
+          </div>
+          <div>
+            <span class="detail-label">Fictional hours</span>
+            <span class="detail-value">6:30 AM – 9 PM</span>
+          </div>
+        </div>
+
+        <div class="ratings">
+          <div>
+            <div class="rating-title">Why we'd go</div>
+            <p class="rating-note">
+              When you need enough energy around you to stay awake without
+              feeling like you're studying in the middle of a party.
+            </p>
+          </div>
+          <div>
+            <div class="rating-title">The vibe</div>
+            <p class="rating-note">
+              Productive, casual, and student-friendly. Nobody is surprised
+              when your laptop stays open for three hours.
+            </p>
+          </div>
+        </div>
+      </article>
+
+      <article class="shop-card">
+        <div class="shop-top">
+          <span class="shop-number">03 · Best Quick Stop</span>
+          <h3>Little Window Espresso</h3>
+          <p class="shop-line">Good coffee. Tiny detour.</p>
+          <p class="shop-description">
+            Little Window Espresso is imagined for the days when sitting down
+            isn't happening. This fictional counter-style stop keeps the menu
+            focused and the pace quick, making it an easy choice before class
+            or while moving between campus and downtown.
+          </p>
+        </div>
+
+        <div class="details">
+          <div>
+            <span class="detail-label">Best for</span>
+            <span class="detail-value">Coffee on the go</span>
+          </div>
+          <div>
+            <span class="detail-label">What to order</span>
+            <span class="detail-value">Maple Shaken Espresso</span>
+          </div>
+          <div>
+            <span class="detail-label">Fictional location</span>
+            <span class="detail-value">A short walk from campus</span>
+          </div>
+          <div>
+            <span class="detail-label">Study factor</span>
+            <span class="detail-value">Low</span>
+          </div>
+          <div>
+            <span class="detail-label">Noise level</span>
+            <span class="detail-value">Lively</span>
+          </div>
+          <div>
+            <span class="detail-label">Fictional hours</span>
+            <span class="detail-value">6 AM – 6 PM</span>
+          </div>
+        </div>
+
+        <div class="ratings">
+          <div>
+            <div class="rating-title">Why we'd go</div>
+            <p class="rating-note">
+              It's the fictional answer to “I have twelve minutes before I
+              need to be somewhere, but coffee is non-negotiable.”
+            </p>
+          </div>
+          <div>
+            <div class="rating-title">The vibe</div>
+            <p class="rating-note">
+              Fast, upbeat, and unfussy. Order, grab your cup, and keep moving.
+            </p>
+          </div>
+        </div>
+      </article>
+
+      <article class="shop-card">
+        <div class="shop-top">
+          <span class="shop-number">04 · Best with Friends</span>
+          <h3>Sunday Table Café</h3>
+          <p class="shop-line">The coffee run that turns into two hours.</p>
+          <p class="shop-description">
+            Sunday Table Café is imagined as the cozy choice for catching up,
+            sharing a table, and ordering something you didn't technically need
+            with your latte. The fictional café blends coffee-shop energy with
+            the slower feeling of a weekend brunch.
+          </p>
+        </div>
+
+        <div class="details">
+          <div>
+            <span class="detail-label">Best for</span>
+            <span class="detail-value">Catching up & coffee dates</span>
+          </div>
+          <div>
+            <span class="detail-label">What to order</span>
+            <span class="detail-value">Vanilla Cardamom Latte</span>
+          </div>
+          <div>
+            <span class="detail-label">Fictional location</span>
+            <span class="detail-value">Near the downtown core</span>
+          </div>
+          <div>
+            <span class="detail-label">Study factor</span>
+            <span class="detail-value">Fair</span>
+          </div>
+          <div>
+            <span class="detail-label">Noise level</span>
+            <span class="detail-value">Social</span>
+          </div>
+          <div>
+            <span class="detail-label">Fictional hours</span>
+            <span class="detail-value">7:30 AM – 7 PM</span>
+          </div>
+        </div>
+
+        <div class="ratings">
+          <div>
+            <div class="rating-title">Why we'd go</div>
+            <p class="rating-note">
+              When the point is technically coffee, but what you really need
+              is a long conversation and nowhere else to be.
+            </p>
+          </div>
+          <div>
+            <div class="rating-title">The vibe</div>
+            <p class="rating-note">
+              Cozy, conversational, and a little slower — best when productivity
+              isn't the main objective.
+            </p>
+          </div>
+        </div>
+      </article>
+
+    </section>
+
+    <section class="student-section">
+      <div class="student-inner">
+
+        <div>
+          <span class="eyebrow">The student test</span>
+          <h2>What actually makes a good Iowa City coffee spot?</h2>
+          <p>
+            For students, a great café isn't just about the drink. The Daily
+            Pour looks at whether a fictional spot fits into real college-town
+            routines — from quick mornings to long afternoons with a laptop.
+          </p>
+        </div>
+
+        <div class="student-checklist">
+          <p><strong>☕ Coffee worth the trip</strong><br>Because caffeine can still taste good.</p>
+          <p><strong>📚 A reason to stay</strong><br>Comfortable seating and space to work matter.</p>
+          <p><strong>🔌 Study practicality</strong><br>Tables, outlets, and the right noise level.</p>
+          <p><strong>📍 Fits the day</strong><br>Useful for campus, downtown, or whatever comes next.</p>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="more-guides">
+      <span class="eyebrow">Keep looking</span>
+      <h2>Find the coffee shop that fits the plan.</h2>
+      <p>Sometimes “best” just means best for what you need right now.</p>
+
+      <div class="guide-links">
+        <a class="button" href="downtown-coffee-shops.html">Explore Downtown Coffee →</a>
+        <a class="button secondary" href="open-late-coffee-shops.html">Find Coffee Open Late →</a>
+      </div>
+    </section>
+
   </main>
 
   <footer>
     <p>
       This is a fictional website created for educational purposes as part of MKTG:4400 at the University of Iowa. It is not a real business.
     </p>
+
     <p>
       <a href="index.html">Home</a> |
       <a href="best-coffee-shops.html">Best Coffee Shops</a> |
