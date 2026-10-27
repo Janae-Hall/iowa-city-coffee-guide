@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://janae-hall.github.io/iowa-city-coffee-guide/sitemap.xml
